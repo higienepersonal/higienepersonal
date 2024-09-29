@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutina de Baño a los 12 años</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            color: #333;
+            margin: 20px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff5f6d;
+            background: linear-gradient(45deg, #ff9966, #ff5f6d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2, h3 {
+            font-size: 2em;
+            color: #555;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 0 10%;
+            color: #555;
+            text-align: justify;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilos de sección */
+        section {
+            padding: 70px 0;
+            position: relative;
+        }
+
+        .section-light {
+            background-color: #fff;
+            color: #333;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-dark {
+            background: linear-gradient(135deg, #ffb7c3, #ff5f6d);
+            color: #fff;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-image {
+            background-image: url('https://images.pexels.com/photos/374101/pexels-photo-374101.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px;
+            color: white;
+            text-align: center;
+        }
+
+        .section-image2 {
+            background-image: url('https://images.pexels.com/photos/936015/pexels-photo-936015.jpeg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px;
+            color: white;
+            text-align: center;
+        }
+
+        /* Estilos de encabezado */
+        header {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+            padding: 20px 0;
+            transition: background-color 0.3s;
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            font-size: 1.1em;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ff5f6d;
+        }
+
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #ff5f6d;
+            transition: width 0.4s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Estilo para botones */
+        .btn {
+            display: inline-block;
+            background: #ff5f6d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #e54d63;
+        }
+
+        /* Burbuja animada */
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -10%;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: rise 10s infinite;
+        }
+
+        .bubble:nth-child(1) {
+            left: 10%;
+            width: 50px;
+            height: 50px;
+            animation-duration: 8s;
+        }
+
+        .bubble:nth-child(2) {
+            left: 30%;
+            width: 30px;
+            height: 30px;
+            animation-duration: 10s;
+        }
+
+        .bubble:nth-child(3) {
+            left: 60%;
+            width: 40px;
+            height: 40px;
+            animation-duration: 7s;
+        }
+
+        .bubble:nth-child(4) {
+            left: 80%;
+            width: 20px;
+            height: 20px;
+            animation-duration: 12s;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #ff5f6d;
+            color: white;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#rutina">Rutina</a>
+            <a href="#higiene">Higiene Personal</a>
+            <a href="#consejos">Consejos</a>
+            <a href="#final">Finalizando</a>
+        </nav>
+    </header>
+
+    <!-- Sección de bienvenida -->
+    <section id="inicio" class="section-image">
+        <h1>La Importancia de un Buen Baño</h1>
+        <p>El baño no solo es esencial para la higiene, sino que también puede ser un momento de relajación y autocuidado.</p>
+    </section>
+
+    <!-- Sección de rutina -->
+    <section id="rutina" class="section-light">
+        <h2>Rutina de Baño</h2>
+        <p>Para un baño efectivo y agradable, sigue estos pasos:</p>
+        <h3>1. Preparación</h3>
+        <p>Reúne todos los productos que vas a usar: jabón, champú, acondicionador y una esponja suave. Asegúrate de que el baño esté a una temperatura agradable.</p>
+
+        <h3>2. Ducha o Baño</h3>
+        <p>Si te duchas, asegúrate de mojarte bien y aplicar el champú primero. Masajea el cuero cabelludo suavemente y enjuaga. Luego aplica el acondicionador. Para el cuerpo, usa el jabón y asegúrate de cubrir todas las áreas.</p>
+    </section>
+
+    <!-- Sección sobre higiene personal -->
+    <section id="higiene" class="section-dark">
+        <h2>Higiene Personal</h2>
+        <h3>Limpieza de Genitales para Niños</h3>
+        <p>Al lavar los genitales, usa agua tibia y un jabón suave. Lava suavemente el área alrededor del pene y los testículos, asegurándote de eliminar cualquier suciedad o sudor. Es importante enjuagar bien para evitar irritaciones.</p>
+
+        <h3>Limpieza de Genitales para Niñas</h3>
+        <p>Las niñas deben lavar la vulva con agua tibia y un jabón suave. Es importante no usar jabón dentro de la vagina, ya que puede causar irritación. Lava con movimientos suaves de adelante hacia atrás.</p>
+        
+        <img src="https://images.pexels.com/photos/3754908/pexels-photo-3754908.jpeg" alt="Limpieza Personal" style="width: 100%; border-radius: 10px; margin-top: 20px;">
+    </section>
+
+    <!-- Sección de consejos -->
+    <section id="consejos" class="section-light">
+        <h2>Consejos para un Baño Perfecto</h2>
+        <ul>
+            <li>Usa productos adecuados para tu tipo de piel y cabello.</li>
+            <li>No olvides hidratar tu piel después de bañarte.</li>
+            <li>Dedica un tiempo para relajarte en el agua.</li>
+            <li>Escucha música que te guste para hacer el momento más especial.</li>
+            <li>Recuerda cepillar tus dientes después del baño para una buena higiene bucal.</li>
+        </ul>
+        <img src="https://images.pexels.com/photos/3771286/pexels-photo-3771286.jpeg" alt="Consejos de Baño" style="width: 100%; border-radius: 10px; margin-top: 20px;">
+    </section>
+
+    <!-- Sección de finalización -->
+    <section id="final" class="section-dark">
+        <h2>Finalizando</h2>
+        <p>Al salir del baño, sécate bien con una toalla suave y aplica crema hidratante para mantener tu piel nutrida. ¡Listo! Ahora estás fresco y limpio para el día.</p>
+        <p>Recuerda que cuidar de ti mismo es importante. Disfruta de tu tiempo en el baño y conviértelo en un momento de bienestar.</p>
+        <a href="#" class="btn">Descubre más sobre autocuidado</a>
+    </section>
+
+    <!-- Burbuja animada -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Rutina de Baño. Todos los derechos reservados.</p>
+    </footer>
+        }
+
+        /* Floating Bubbles */
+        .bubbles {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(to bottom, #84fab0, #8fd3f4);
+            overflow: hidden;
+        }
+
+        .bubble {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            bottom: -50px;
+            animation: rise 5s infinite ease-in-out;
+        }
+
+        .bubble:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            left: 20%;
+            animation-duration: 7s;
+        }
+
+        .bubble:nth-child(3) {
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            animation-duration: 10s;
+        }
+
+        .bubble:nth-child(4) {
+            width: 30px;
+            height: 30px;
+            left: 70%;
+            animation-duration: 8s;
+        }
+
+        @keyframes rise {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-800px);
+            }
+        }
+
+</body>
+
+</html>
